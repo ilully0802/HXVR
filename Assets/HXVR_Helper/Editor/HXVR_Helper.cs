@@ -42,4 +42,22 @@ public class HXVR_Helper : Editor
             picoVR.transform.localRotation = Quaternion.identity;
         }
     }
+
+
+    [MenuItem("HXVRHelper/Add LeapMotion VR objects")]
+    static void AddLeapmotinVR()
+    {
+        var so = ScriptableObject.CreateInstance(typeof(HXVRPluginStub));
+        var script = MonoScript.FromScriptableObject(so);
+        var path = AssetDatabase.GetAssetPath(script);
+        string prefabsPath = path.Substring(0, path.Length - "/HXVR_Helper/Editor/HXVRPluginStub.cs".Length) + "/HXVR_Helper/Prefabs/HXLeapmotinVR_Setup.prefab";
+        GameObject picoVRPrefab = (GameObject)AssetDatabase.LoadAssetAtPath(prefabsPath, typeof(GameObject));
+        if (picoVRPrefab)
+        {
+            GameObject picoVR = Instantiate(picoVRPrefab) as GameObject;
+            picoVR.name = picoVR.name.Replace("(Clone)", "");
+            picoVR.transform.localPosition = Vector3.zero;
+            picoVR.transform.localRotation = Quaternion.identity;
+        }
+    }
 }
