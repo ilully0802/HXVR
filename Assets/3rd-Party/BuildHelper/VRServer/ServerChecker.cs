@@ -87,8 +87,8 @@ public class ServerChecker : MonoBehaviour
 
     private void GetTestParameters()
     {
-        string user = "jchguan";
-        string password = "2ilully08022";
+        string user = "qqqqqqqqqqqqqq";
+        string password = "qqqqqqqqqqqqqqq";
         string key = new string(keyChar);
         DateTime nowTime = DateTime.Now;
         string temTimeStr = nowTime.ToString("yyyy-MM-ddTHH:mm:sszzz");
